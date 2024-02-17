@@ -9,6 +9,9 @@ import { MenubarComponent } from './component/menubar/menubar.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MaterialModule } from './material-module';
 import { BottommenubarComponent } from './component/bottommenubar/bottommenubar.component';
+import { ChartComponent } from './component/chart/chart.component';
+import { MusicComponent } from './component/music/music.component';
+import { ReelComponent } from './component/reel/reel.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { BottommenubarComponent } from './component/bottommenubar/bottommenubar.
     CardComponent,
     HomeComponent,
     MenubarComponent,
-    BottommenubarComponent
+    BottommenubarComponent,
+    ChartComponent,
+    MusicComponent,
+    ReelComponent
   ],
   imports: [
     BrowserModule,
@@ -24,4 +30,9 @@ import { BottommenubarComponent } from './component/bottommenubar/bottommenubar.
     MaterialModule,
   ],
   providers: [
-    pr
+    provideClientHydration(),
+    provideAnimationsAsync()
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
