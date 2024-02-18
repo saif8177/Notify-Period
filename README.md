@@ -3,6 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 ## to set this Project you need to do first step
 Download or Clone it. Then run below commond 
+##
 Run 'npm install -g @angular/cli'
 Run 'npm install'
 Run 'ng start'
