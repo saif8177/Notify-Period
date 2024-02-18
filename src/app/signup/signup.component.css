@@ -1,0 +1,20 @@
+/* signup.component.css */
+
+/* Other styles remain unchanged */
+
+.password-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.password-group label {
+    width: 100%;
+}
+.password-group label:nth-child(2) {
+    margin-top: 10px; /* Adjust as needed */
+}
+
+.submit {
+    width: 50%;
+    margin-top: 20px; /* Adjust as needed */
+}

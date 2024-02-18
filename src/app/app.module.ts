@@ -12,6 +12,10 @@ import { BottommenubarComponent } from './component/bottommenubar/bottommenubar.
 import { ChartComponent } from './component/chart/chart.component';
 import { MusicComponent } from './component/music/music.component';
 import { ReelComponent } from './component/reel/reel.component';
+import { AdmobBannerComponent } from './component/admob-banner/admob-banner.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { ReelComponent } from './component/reel/reel.component';
     BottommenubarComponent,
     ChartComponent,
     MusicComponent,
-    ReelComponent
+    ReelComponent,
+    AdmobBannerComponent,
+    LoginComponent,
+    SignupComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -31,7 +39,7 @@ import { ReelComponent } from './component/reel/reel.component';
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent]
 })
