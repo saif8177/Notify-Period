@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Output, EventEmitter, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,10 +7,18 @@ import { Router } from '@angular/router';
   styleUrl: './bottommenubar.component.css'
 })
 export class BottommenubarComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router,  private elementRef: ElementRef) {}
 
   navigateTo(route: string) {
     this.router.navigate([route]);
   }
 
+  @Output() closeDrawerEvent = new EventEmitter<void>();
+  
+  handleBottomMenuClick() {
+    this.closeDrawerEvent.emit();
+  }
+  get nativeElement(): HTMLElement {
+    return this.elementRef.nativeElement;
+  }
 }
