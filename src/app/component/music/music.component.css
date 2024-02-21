@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
 :host {
   margin: 0;
@@ -16,7 +16,7 @@
   align-items: center;
   z-index: +5;
   transition: 0.5s;
-  /* background: #191624; */
+  background: #191624;
 }
 
 .headerImg {
@@ -39,8 +39,8 @@
   border-radius: 40px;
   z-index: +1;
   background: linear-gradient(135deg, #62ff8e, #9483ff);
-}
-
+} */
+/* 
 .player .song-name {
   position: relative;
   font-size: 36px;
@@ -73,7 +73,7 @@
   top: 10px;
   right: 10px;
   transition: 0.5s;
-  /* background: url("../assets/220px-Ariana_Grande_No_Tears_Left_to_Cry.png"); */
+  background: url("../assets/220px-Ariana_Grande_No_Tears_Left_to_Cry.png");
   background-size: 100%;
   margin-right: auto;
 }
@@ -99,7 +99,7 @@
   top: 0;
   bottom: 0;
   transition: 0.25s;
-  /* background: url("../assets/Vector 1 (1).png"); */
+  background: url("../assets/Vector 1 (1).png");
   background-size: 100%;
 }
 
@@ -244,4 +244,52 @@
   left: 0;
   z-index: -2;
   opacity: 0.9;
+} */
+
+.container {
+  .main-toolbar {
+    .spacer {
+      flex: 1 1 auto;
+    }
+    .toolbar-btn {
+      font-size: 16px;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .content {
+    .logo {
+      margin: 2.5rem;
+      text-align: center;
+      font-size: 24px;
+      color: #3f51b5;
+      .mat-icon {
+        height: 160px !important;
+        width: 160px !important;
+        font-size: 160px !important;
+      }
+    }
+  }
+
+  .media-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    .time-slider {
+      width: 100% !important;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    .media-action-bar {
+      width: 100%;
+      padding: 2.5rem;
+      justify-content: center;
+      .mat-icon {
+        height: 48px !important;
+        width: 48px !important;
+        font-size: 48px !important;
+      }
+    }
+  }
 }

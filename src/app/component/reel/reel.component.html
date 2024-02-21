@@ -1,2 +1,15 @@
-<p>reel works!</p>
 <app-admob-banner></app-admob-banner>
+<!-- reel.component.html -->
+
+<!-- reel.component.html -->
+
+<!-- reel.component.html -->
+
+<div class="video-container">
+    <div class="video" *ngFor="let video of videos">
+      <iframe width="560" height="315" [src]="'https://www.youtube.com/embed/' + video.id['videoId']" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+  
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/pYOF2ZM3_nY?start=61" frameborder="0" allowfullscreen></iframe>
+    

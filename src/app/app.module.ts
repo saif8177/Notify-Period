@@ -15,7 +15,7 @@ import { ReelComponent } from './component/reel/reel.component';
 import { AdmobBannerComponent } from './component/admob-banner/admob-banner.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,6 +36,7 @@ import { SignupComponent } from './signup/signup.component';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
+    HttpClientModule,
   ],
   providers: [
     provideClientHydration(),

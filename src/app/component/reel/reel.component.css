@@ -1,0 +1,12 @@
+/* reel.component.css */
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .video {
+    margin: 20px;
+  }
+  
