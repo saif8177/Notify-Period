@@ -1,4 +1,6 @@
-<div>
-  <app-menubar></app-menubar>
-  <app-bottommenubar class="bottommenu"></app-bottommenubar>
-</div>
+<div *ngIf="showMenuBars">
+    <app-menubar></app-menubar>
+    <app-bottommenubar class="bottommenu"></app-bottommenubar>
+  </div>
+  <router-outlet></router-outlet>
+  

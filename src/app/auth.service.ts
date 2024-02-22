@@ -10,10 +10,17 @@ export class AuthService {
   
   private _isLoggedIn: boolean = false;
 
-  // Getter method for isLoggedIn property
-  get isLoggedIn(): boolean {
-    return this._isLoggedIn;
+  isLoggedIn: boolean = false;
+
+  login() {
+    // Logic for user authentication
+    this.isLoggedIn = true;
   }
+
+  // Getter method for isLoggedIn property
+  // get isLoggedIn(): boolean {
+  //   return this._isLoggedIn;
+  // }
 
   // Setter method for isLoggedIn property
   setLoggedIn(value: boolean): void {
