@@ -36,6 +36,23 @@ button {
 }
 
 
+@media screen and (max-width: 768px) {
+  h2 {
+    padding-top: 100px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  h2 {
+    padding-top: 30px; /* Adjust padding for medium screens */
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  h2 {
+    padding-top: 50px; /* Adjust padding for larger screens */
+  }
+}
 .form {
   position: relative;
   
@@ -46,7 +63,7 @@ button {
 }
 
 h2 {
-  
+  /* padding-top: 200px; */
   width: 100%;
   font-size: 30px;
   text-align: center;
