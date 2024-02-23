@@ -9,6 +9,7 @@ import { AdmobBannerComponent } from './component/admob-banner/admob-banner.comp
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SplashComponent } from './component/splash/splash.component';
+import { AutoRedirectGuard } from './component/auto-redirect.guard';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
@@ -17,9 +18,10 @@ const routes: Routes = [
   { path: 'music', component: MusicComponent },
   { path: 'reel', component: ReelComponent },
   { path: 'admob-banner', component: AdmobBannerComponent},
-  { path: '', component: LoginComponent },
+  { path: '', component: SplashComponent, canActivate: [AutoRedirectGuard] },
+  { path: 'login', component: LoginComponent,  canActivate: [AutoRedirectGuard], },
   { path: 'signup', component: SignupComponent },
-  { path: 'splash', component: SplashComponent},
+  
   
 ];
 

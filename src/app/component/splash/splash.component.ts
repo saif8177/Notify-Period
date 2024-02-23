@@ -1,6 +1,7 @@
 // splash.component.ts
 
 import { Component, OnInit } from '@angular/core';
+import { SplashStateService } from '../splash-state.service';
 
 @Component({
   selector: 'app-splash',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./splash.component.css']
 })
 export class SplashComponent implements OnInit {
+  constructor(private splashStateService: SplashStateService) {}
   notifyPeriodArray: string[] = [];
   showText: boolean = false;
 
@@ -15,6 +17,7 @@ export class SplashComponent implements OnInit {
     // Populate notifyPeriodArray with each character of "Notify Period"
     const notifyPeriod = "Notify Period";
     this.notifyPeriodArray = notifyPeriod.split("");
+    this.splashStateService.setShouldDisplaySplash(true);
 
     // Set a timeout to show the text after the animation completes
     setTimeout(() => {

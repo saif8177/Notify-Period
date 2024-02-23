@@ -17,7 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SplashComponent } from './component/splash/splash.component';
-
+import { AutoRedirectGuard } from './component/auto-redirect.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +42,7 @@ import { SplashComponent } from './component/splash/splash.component';
     FormsModule,
   ],
   providers: [
+    AutoRedirectGuard,
     provideClientHydration(),
     provideAnimationsAsync(),
   ],
