@@ -1,0 +1,18 @@
+<div class="splash">
+  <!-- Container for logo and text -->
+  <div class="content">
+    <!-- Logo -->
+    <img src="assets/logopng.png" alt="Splash Logo" class="logo" />
+
+    <!-- Text -->
+    <div class="notify-period" *ngIf="showText">
+      <span
+        *ngFor="let char of notifyPeriodArray; let i = index"
+        class="letter"
+        [style.animation-delay]="i * 0.1 + 's'"
+      >
+        {{ char }}
+      </span>
+    </div>
+  </div>
+</div>

@@ -8,6 +8,7 @@ import { ReelComponent } from './component/reel/reel.component';
 import { AdmobBannerComponent } from './component/admob-banner/admob-banner.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { SplashComponent } from './component/splash/splash.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'admob-banner', component: AdmobBannerComponent},
   { path: '', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'splash', component: SplashComponent},
   
 ];
 

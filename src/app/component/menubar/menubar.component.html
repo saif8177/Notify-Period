@@ -1,18 +1,18 @@
 <mat-toolbar color="primary" class="mat-elevation-z8" #menubar>
-    <button (click)="toggleDrawer()"  mat-icon-button >
-        <mat-icon>menu</mat-icon>
-    </button>
-    <span>Notify Period</span>
-    <span class="example-spacer"></span>
-    <!-- <button routerLink="" mat-button>Home</button>
+  <button (click)="toggleDrawer()" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span><img src="assets/logopng.png" height="80" width="75"> </span>
+  <span class="example-spacer"></span>
+  <!-- <button routerLink="" mat-button>Home</button>
     <button [matMenuTriggerFor]="lvl1master" mat-button>Master</button> -->
-    <!-- <mat-menu #lvl1master="matMenu">
+  <!-- <mat-menu #lvl1master="matMenu">
         <button [matMenuTriggerFor]="company" mat-menu-item>Company</button>
         <button [matMenuTriggerFor]="customer" mat-menu-item>Customer</button>
         <button [matMenuTriggerFor]="product" mat-menu-item>Product</button>
     </mat-menu> -->
 
-    <!-- <mat-menu #company="matMenu">
+  <!-- <mat-menu #company="matMenu">
         <button mat-menu-item>Term</button>
         <button mat-menu-item>Tax</button>
         <button mat-menu-item>Currency</button>
@@ -32,26 +32,38 @@
         <button mat-menu-item>Size</button>
     </mat-menu> -->
 
-    <!-- <button routerLink="input" mat-button>Input</button>
+  <!-- <button routerLink="input" mat-button>Input</button>
     <button routerLink="autocomplete" mat-button>Autocomplete</button>
     <a href="#" mat-raised-button color="accent">Join Us</a> -->
-    <!-- <button (click)="badgevisibility()"  mat-icon-button>
+  <!-- <button (click)="badgevisibility()"  mat-icon-button>
         <mat-icon matBadgeColor="accent" matBadge="15" [matBadgeHidden]="badgevisible" matBadgeSize="small">notifications</mat-icon>
     </button> -->
 </mat-toolbar>
 <mat-drawer-container autosize (backdropClick)="CloseDrawerOnBackdropClick()">
-    <mat-drawer (click)="drawer.close()" #drawer opened="false" mode="over" position="start">
+  <mat-drawer
+    (click)="drawer.close()"
+    #drawer
+    opened="false"
+    mode="over"
+    position="start"
+  >
     <mat-nav-list>
-        <mat-list-item>
-            <button routerLink="card" mat-button><mat-icon>dashboard</mat-icon> Dashboard</button>
-        </mat-list-item>
-        <mat-list-item>
-            <button routerLink="" mat-button><mat-icon>home</mat-icon> Home</button>
-        </mat-list-item>
-        <!-- <mat-list-item>
-            <button routerLink="slider" mat-button><mat-icon>explore</mat-icon> Slider</button>
-        </mat-list-item>
-        <mat-list-item>
+      <mat-list-item>
+        <button routerLink="card" mat-button>
+          <mat-icon>dashboard</mat-icon> Dashboard
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="home" mat-button>
+          <mat-icon>home</mat-icon> Home
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="" mat-button>
+          <mat-icon>explore</mat-icon> Sign out
+        </button>
+      </mat-list-item>
+      <!-- <mat-list-item>
             <button routerLink="table" mat-button><mat-icon>table</mat-icon> Table</button>
         </mat-list-item>
         <mat-list-item>
@@ -64,17 +76,18 @@
             <button mat-button><mat-icon>analytics</mat-icon> analytics</button>
         </mat-list-item> -->
     </mat-nav-list>
-    </mat-drawer>
-    <!-- <mat-drawer-content>
+  </mat-drawer>
+  <!-- <mat-drawer-content>
         <div style="text-align: center;min-height: 500px;">
 
             <router-outlet></router-outlet>
             </div>
     </mat-drawer-content> -->
-    <mat-drawer-content [ngStyle]="{'--min-content-height': minContentHeight + 'px'}">
-        <div style="text-align: center;">
-          <router-outlet></router-outlet>
-        </div>
-      </mat-drawer-content>
-      
+  <mat-drawer-content
+    [ngStyle]="{ '--min-content-height': minContentHeight + 'px' }"
+  >
+    <div style="text-align: center">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
 </mat-drawer-container>

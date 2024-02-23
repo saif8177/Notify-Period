@@ -16,6 +16,7 @@ import { AdmobBannerComponent } from './component/admob-banner/admob-banner.comp
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SplashComponent } from './component/splash/splash.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     AdmobBannerComponent,
     LoginComponent,
     SignupComponent,
+    SplashComponent,
     
   ],
   imports: [

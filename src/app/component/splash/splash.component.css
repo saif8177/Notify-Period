@@ -1,0 +1,83 @@
+.splash {
+    /* Add your splash screen styles here */
+    background-color: #ffffff; /* Example background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo {
+    /* Example styles for the splash screen image */
+    width: 200px;
+    height: auto;
+    image-rendering: pixelated;
+  }
+  
+  .notify-period {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px; /* Adjust margin as needed */
+  }
+  
+  
+  
+  .splash img {
+    /* Example styles for the splash screen image */
+    width: 200px;
+    height: auto;
+    image-rendering: pixelated;
+  }
+  .blurred {
+    filter: none; /* Remove blur effect */
+  }
+  
+  .splash img.blurred {
+    image-rendering: auto; /* Remove blur effect */
+  }
+  @keyframes zoomInAndMoveUp {
+    0% {
+      transform: scale(0) translateY(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(2) translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) translateY(-100%);
+    }
+  }
+  
+  .splash img {
+    animation: zoomInAndMoveUp 5s ease forwards;/* Adjust duration and timing function as needed */
+  }
+  
+  .notify-period {
+    display: flex;
+    justify-content: center;
+    animation-delay: 6s;
+  }
+  
+  .letter {
+    opacity: 0;
+    animation: fadeIn 25s ease forwards ;
+    animation-delay: 70000ms;
+    font-size: 45px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
