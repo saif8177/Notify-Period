@@ -1,12 +1,11 @@
-/* reel.component.css */
-
+/* Add any additional styling for your video container here */
 .video-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .video {
-    margin: 20px;
-  }
-  
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video {
+  width: 100%;
+  height: 100vh;
+}

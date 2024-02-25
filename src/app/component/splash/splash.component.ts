@@ -22,6 +22,6 @@ export class SplashComponent implements OnInit {
     // Set a timeout to show the text after the animation completes
     setTimeout(() => {
       this.showText = true;
-    }, 7000); // Adjust the delay as needed
+    }, 6000); // Adjust the delay as needed
   }
 }

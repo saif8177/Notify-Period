@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER  } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -45,7 +45,22 @@ import { AutoRedirectGuard } from './component/auto-redirect.guard';
     AutoRedirectGuard,
     provideClientHydration(),
     provideAnimationsAsync(),
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeApp,
+      deps: [],
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function initializeApp() {
+  return () =>
+    new Promise<void>((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 9000);
+    });
+}

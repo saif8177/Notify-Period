@@ -12,7 +12,7 @@ export class AutoRedirectGuard implements CanActivate {
     setTimeout(() => {
       this.splashStateService.setShouldDisplaySplash(false);
       this.router.navigate(['/login']);
-    }, 10000); // Change the timeout to 5000 milliseconds (5 seconds)
+    }, 5000); // Change the timeout to 5000 milliseconds (5 seconds)
 
     return true;
   }

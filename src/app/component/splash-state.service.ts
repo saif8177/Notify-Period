@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class SplashStateService {
   private shouldDisplaySplash: boolean;
+  isSplashAnimationComplete: any;
 
   constructor() {
     // Retrieve the state from local storage
