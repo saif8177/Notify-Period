@@ -293,3 +293,26 @@
     }
   }
 }
+/* Add this code in your music.component.css */
+.audio-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-bar-container {
+  width: 50%;
+  height: 7px;
+  border-radius: 4px;
+  background-color: #ddd; /* Grey background */
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.progress-bar {
+  height: 100%;
+  cursor: pointer;
+  background-color: #4caf50; /* Green progress bar */
+  
+}

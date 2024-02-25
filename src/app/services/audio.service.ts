@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { Observable, BehaviorSubject, Subject } from "rxjs";
-import { takeUntil } from "rxjs/operators";
 import * as moment from "moment";
 import { StreamState } from '../interfaces/stream-state';
 
@@ -8,15 +7,9 @@ import { StreamState } from '../interfaces/stream-state';
   providedIn: "root"
 })
 export class AudioService {
-  playStream(url: any) {
-    throw new Error('Method not implemented.');
-  }
-  stop() {
-    throw new Error('Method not implemented.');
-  }
-  private stop$ = new Subject();
   private audioObj = new Audio();
-  audioEvents = [
+  private stop$ = new Subject<void>();
+  private audioEvents = [
     "ended",
     "error",
     "play",
@@ -28,7 +21,6 @@ export class AudioService {
     "loadstart"
   ];
 
-  
   private state: StreamState = {
     playing: false,
     readableCurrentTime: '',
@@ -38,42 +30,31 @@ export class AudioService {
     canplay: false,
     error: false,
   };
-  private streamObservable(url: string) {
+
+  private stateChange: BehaviorSubject<StreamState> = new BehaviorSubject(
+    this.state
+  );
+
+  constructor() {
+    this.addEvents(this.audioObj, this.audioEvents, (event: Event) => {
+      this.updateStateEvents(event);
+    });
+  }
+
+  playStream(url: string): Observable<any> {
     return new Observable(observer => {
-      // Play audio
       this.audioObj.src = url;
       this.audioObj.load();
       this.audioObj.play();
-  
-      const handler = (event: Event) => {
-        this.updateStateEvents(event);
-        observer.next(event);
-      };
-  
-      this.addEvents(this.audioObj, this.audioEvents, handler);
+
       return () => {
-        // Stop Playing
         this.audioObj.pause();
         this.audioObj.currentTime = 0;
-        // remove event listeners
-        this.removeEvents(this.audioObj, this.audioEvents, handler);
-        // reset state
         this.resetState();
       };
     });
   }
 
-  private addEvents(obj: HTMLAudioElement, events: any[], handler: (event: Event) => void) {
-    events.forEach((event: any) => {
-      obj.addEventListener(event, handler);
-    });
-  }
-
-  private removeEvents(obj: HTMLAudioElement, events: any[], handler: (event: Event) => void) {
-    events.forEach((event: any) => {
-      obj.removeEventListener(event, handler);
-    });
-  }
   play() {
     this.audioObj.play();
   }
@@ -82,21 +63,18 @@ export class AudioService {
     this.audioObj.pause();
   }
 
-  // stop() {
-  //   this.stop$.next();
-  // }
+  stop() {
+    this.stop$.next(undefined);
+  }
 
   seekTo(seconds: number) {
     this.audioObj.currentTime = seconds;
   }
 
-  formatTime(time: number, format: string = "HH:mm:ss") {
-    const momentTime = time * 1000;
-    return moment.utc(momentTime).format(format);
+  getState(): Observable<StreamState> {
+    return this.stateChange.asObservable();
   }
-  private stateChange: BehaviorSubject<StreamState> = new BehaviorSubject(
-    this.state
-  );
+
   private updateStateEvents(event: Event): void {
     switch (event.type) {
       case "canplay":
@@ -121,8 +99,10 @@ export class AudioService {
         this.state.error = true;
         break;
     }
+
     this.stateChange.next(this.state);
   }
+
   private resetState() {
     this.state = {
       playing: false,
@@ -133,8 +113,23 @@ export class AudioService {
       canplay: false,
       error: false
     };
+    this.stateChange.next(this.state);
   }
-  getState(): Observable<StreamState> {
-    return this.stateChange.asObservable();
-   }
+
+  private addEvents(obj: HTMLAudioElement, events: any[], handler: (event: Event) => void) {
+    events.forEach((event: any) => {
+      obj.addEventListener(event, handler);
+    });
+  }
+
+  private removeEvents(obj: HTMLAudioElement, events: any[], handler: (event: Event) => void) {
+    events.forEach((event: any) => {
+      obj.removeEventListener(event, handler);
+    });
+  }
+
+  private formatTime(time: number, format: string = "HH:mm:ss") {
+    const momentTime = time * 1000;
+    return moment.utc(momentTime).format(format);
+  }
 }
